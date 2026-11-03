@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João Carlos Vieira | Desenvolvedor Full Stack & ADS UNIVALI</title>
+  
+  <meta name="description" content="Portfólio de João Carlos Vieira — Desenvolvedor Full Stack, Especialista em Eletrônica e Estudante de ADS na UNIVALI. Aplicações web modernas em TypeScript, React, Python e Cloud.">
+  <meta name="keywords" content="João Carlos Vieira, Desenvolvedor Full Stack, TypeScript, React, Python, Java, UNIVALI, Florianópolis, Portfólio">
+  <meta name="author" content="João Carlos Vieira">
+  
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="João Carlos Vieira | Desenvolvedor Full Stack">
+  <meta property="og:description" content="Aplicações de alto impacto, arquitetura moderna em TypeScript, React, Python e projetos reais em produção.">
+  <meta property="og:image" content="assets/avatar.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/avatar.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            space: {
+              900: '#070a10',
+              800: '#0b111e',
+              700: '#111a2d',
+              600: '#1a2742'
+            },
+            cyanGlow: '#00f2fe',
+            violetGlow: '#8b5cf6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#070a10] text-slate-100 antialiased relative overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-cyan -top-40 -left-40"></div>
+  <div class="ambient-glow glow-purple top-1/4 -right-40"></div>
+  <div class="ambient-glow glow-blue top-2/3 -left-40"></div>
+
+  <!-- Background Grid Pattern -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-40"></div>
+
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#070a10]/80 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          JV
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight group-hover:text-cyan-300 transition-colors">João Vieira</span>
+          <span class="block text-[11px] text-slate-400 font-mono-code leading-none">Full Stack Dev</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#inicio" class="desktop-nav-link text-cyan-400 font-semibold hover:text-cyan-300 transition-colors">Início</a>
+        <a href="#spotlight" class="desktop-nav-link text-slate-300 hover:text-cyan-300 transition-colors">Destaque</a>
+        <a href="#projetos" class="desktop-nav-link text-slate-300 hover:text-cyan-300 transition-colors">Projetos</a>
+        <a href="#habilidades" class="desktop-nav-link text-slate-300 hover:text-cyan-300 transition-colors">Stack</a>
+        <a href="#trajetoria" class="desktop-nav-link text-slate-300 hover:text-cyan-300 transition-colors">Trajetória</a>
+        <a href="#contato" class="desktop-nav-link text-slate-300 hover:text-cyan-300 transition-colors">Contato</a>
+      </nav>
+
+      <!-- Action & Status -->
+      <div class="hidden lg:flex items-center gap-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>
+          Disponível para Projetos
+        </div>
+        <a href="https://wa.me/5548988504214?text=Ol%C3%A1%20Jo%C3%A3o,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium text-sm shadow-md shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          Fale Comigo
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none" aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#090d16]/95 border-b border-white/10 space-y-3">
+      <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Início</a>
+      <a href="#spotlight" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Projeto em Destaque</a>
+      <a href="#projetos" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Projetos & Portfólio</a>
+      <a href="#habilidades" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Stack Técnica</a>
+      <a href="#trajetoria" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Trajetória & Formação</a>
+      <a href="#contato" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/5 font-medium">Contato Direto</a>
+      <div class="pt-2">
+        <a href="https://wa.me/5548988504214" target="_blank" class="w-full inline-flex justify-center items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-28">
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="min-h-[88vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs sm:text-sm font-medium">
+            <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+            <span>Desenvolvedor Full Stack • Graduando ADS UNIVALI</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+            Transformando lógica e dados em 
+            <span class="text-gradient-primary">soluções digitais de alta performance</span>.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Sou <span class="text-white font-semibold">João Carlos Vieira</span>. Uno o rigor técnico da minha formação em <span class="text-cyan-300 font-medium">Eletrônica (FAB)</span> à agilidade do desenvolvimento web moderno em <span class="text-cyan-300 font-medium">TypeScript, React, Python e Cloud</span>. Criador de interfaces com foco obsessivo em conversão e usabilidade real.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projetos" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-xl shadow-cyan-500/25 transition-all hover:scale-[1.02]">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+              Explorar Portfólio
+            </a>
+            
+            <a href="https://wa.me/5548988504214?text=Ol%C3%A1%20Jo%C3%A3o,%20vim%20pelo%20seu%20portf%C3%B3lio!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm sm:text-base transition-all hover:border-white/20">
+              <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+              WhatsApp Direto
+            </a>
+
+            <a href="https://github.com/Deboshionkio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all" title="Ver GitHub">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/joao-vieira-656358176/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all" title="Ver LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i>
+            </a>
+          </div>
+
+          <!-- Quick Stats Banner -->
+          <div class="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center lg:text-left">
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-white font-mono-code">25+</div>
+              <div class="text-xs text-slate-400">Repositórios no GitHub</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-cyan-400 font-mono-code">100%</div>
+              <div class="text-xs text-slate-400">Foco em Performance</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-blue-400 font-mono-code">ADS</div>
+              <div class="text-xs text-slate-400">UNIVALI Superior</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-purple-400 font-mono-code">FAB</div>
+              <div class="text-xs text-slate-400">Especialista Eletrônica</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Avatar & Floating Tech Badges -->
+        <div class="lg:col-span-5 flex justify-center relative">
+          <div class="relative w-72 h-72 sm:w-80 sm:h-80">
+            
+            <!-- Glowing Orbit Rings -->
+            <div class="absolute inset-0 rounded-full border border-cyan-500/20 animate-pulse"></div>
+            <div class="absolute -inset-4 rounded-full border border-blue-500/10"></div>
+            
+            <!-- Avatar Frame -->
+            <div class="w-full h-full rounded-full p-2 bg-gradient-to-tr from-cyan-500 via-blue-600 to-purple-600 shadow-2xl shadow-cyan-500/20">
+              <div class="w-full h-full rounded-full overflow-hidden bg-space-900 border-4 border-space-900">
+                <img src="assets/avatar.jpg" alt="João Carlos Vieira" class="w-full h-full object-cover filter contrast-105">
+              </div>
+            </div>
+
+            <!-- Floating Badge: TypeScript / React -->
+            <div class="absolute -top-3 -right-2 glass-card px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg animate-bounce duration-1000">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+              <span class="text-xs font-semibold text-white">TypeScript & React</span>
+            </div>
+
+            <!-- Floating Badge: Python / Back-end -->
+            <div class="absolute -bottom-2 -left-3 glass-card px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-lg">
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+              <span class="text-xs font-semibold text-white">Python & Algoritmos</span>
+            </div>
+
+            <!-- Floating Badge: Music Easter Egg -->
+            <button id="sax-easter-egg" class="sound-badge absolute top-1/2 -right-6 glass-card px-3 py-1.5 rounded-full flex items-center gap-1.5 text-[11px] text-cyan-300 border-cyan-500/30 hover:border-cyan-400 shadow-md" title="Clique para ouvir nota!">
+              <span>🎷</span>
+              <span>Sax & Arte</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SPOTLIGHT CASE STUDY: FABÍOLA GÓES -->
+    <section id="spotlight" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+          Case Study Real • Em Produção
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Fabíola Góes Arquitetura & Habite-se
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mt-1">
+          Plataforma de alta conversão para arquiteta renomada com tráfego real, métricas analíticas e ferramentas interativas.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-2xl overflow-hidden border border-white/10 p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Screenshot Preview -->
+          <div class="lg:col-span-7 group project-img-wrapper rounded-xl overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
+            <a href="https://arquitetafabiolagoes.vercel.app" target="_blank" rel="noopener noreferrer">
+              <img src="assets/fabiola.png" alt="Preview Fabíola Góes Arquitetura" class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500">
+            </a>
+          </div>
+
+          <!-- Case Details -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="flex items-center gap-2 text-xs font-mono-code text-cyan-400">
+              <i data-lucide="gauge" class="w-4 h-4"></i>
+              <span>Otimizado para Mobile, Tablet e Desktop</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white leading-snug">
+              Engenharia de Conversão & Experiência Imersiva
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Desenvolvido com foco total na retenção de leads e experiência do usuário. O projeto conta com:
+            </p>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span><strong>Simulador de Orçamento Interativo:</strong> Cálculo dinâmico em tempo real de Habite-se, Projetos Residenciais e Comerciais.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span><strong>Comparador Antes & Depois:</strong> Slider dinâmico com proporções fluidas e sincronização visual.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span><strong>Quiz de Estilo Arquitetônico:</strong> Questionário gamificado com pré-carregamento no WhatsApp.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span><strong>Google Analytics 4 Integrado:</strong> Stream web ativo com rastreamento de eventos customizados de clique e conversão.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono-code text-slate-300">HTML5 Semântico</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono-code text-slate-300">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono-code text-slate-300">JavaScript ES6+</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono-code text-slate-300">Google Analytics 4</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono-code text-slate-300">Vercel Deploy</span>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3 pt-4">
+              <a href="https://arquitetafabiolagoes.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                Ver Site Ao Vivo
+              </a>
+              <a href="https://github.com/Deboshionkio/arquitetafabiolagoes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-sm transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                Repositório
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section id="projetos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide uppercase">
+            <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+            Portfólio & Repositórios
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+            Projetos Selecionados
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base max-w-xl mt-1">
+            Uma amostra das aplicações construídas em TypeScript, React, Java, Python e ferramentas web.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-space-800/80 border border-white/10">
+          <button class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white" data-filter="all">
+            Todos (8)
+          </button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white" data-filter="react">
+            React & Web (4)
+          </button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white" data-filter="typescript">
+            TypeScript (2)
+          </button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white" data-filter="mobile">
+            Mobile & Utilitários (3)
+          </button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white" data-filter="backend">
+            Back-end & Algoritmos (2)
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project 1: Smart_Tank -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="react typescript">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/smart_tank.png" alt="Smart_Tank App" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">TypeScript</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">React 18</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Smart_Tank</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Web App completo para controle de consumo veicular, gestão financeira de combustível, cálculo de média e histórico de abastecimentos integrado ao Supabase.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Tailwind CSS</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Supabase</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Lucide</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Vite</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Gestão Automotiva</span>
+            <a href="https://github.com/Deboshionkio/Smart_Tank" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              Repositório ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Endolipo 2.0 -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="react typescript">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/endolipo.png" alt="Endolipo 2.0" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">React 19</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">TanStack Start</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Endolipo 2.0</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Plataforma web de última geração para clínica estética e procedimentos corporais com Tailwind v4, Radix UI e componentes de alta performance.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">TypeScript 5.8</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Tailwind v4</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Radix UI</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Vitest</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <a href="https://endolipo-2-0.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              Live Demo
+            </a>
+            <a href="https://github.com/Deboshionkio/endolipo-2.0" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Colinha Digital SC -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="mobile">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/colinha.png" alt="Colinha Digital SC" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Mobile-First</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">JavaScript</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Colinha Digital SC</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Web app prático para eleitores de Santa Catarina pesquisarem, organizarem e salvarem números de candidatos offline no smartphone para o dia da eleição.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">LocalStorage</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">PWA Ready</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">UX Acessível</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <a href="https://colinha-digital-sc.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              Live Demo
+            </a>
+            <a href="https://github.com/Deboshionkio/colinha-digital-sc" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Meu Filtro Apoiadores -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="mobile">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/filtro.png" alt="Meu Filtro Apoiadores" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">HTML5 Canvas</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30">Image Processing</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Meu Filtro Apoiadores</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Ferramenta interativa de enquadramento de foto em molduras com controles de zoom, rotação e exportação instantânea de imagem renderizada em Canvas.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Canvas API</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">JavaScript ES6</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">CSS3 Flexbox</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <a href="https://meu-filtro-apoiadores.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              Live Demo
+            </a>
+            <a href="https://github.com/Deboshionkio/meu-filtro-apoiadores" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: QR Code Free -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="mobile">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/qrcode.png" alt="QR Code Free" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Utilitário Web</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">QR Code Free</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Gerador rápido e leve de QR Codes customizados com download direto e renderização vetorial, sem necessidade de cadastro ou anúncios intrusivos.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">HTML5</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">SVG Generator</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Vanilla JS</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <a href="https://qrcode-free-ashy.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              Live Demo
+            </a>
+            <a href="https://github.com/Deboshionkio/qrcode-free" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: Inventário RPG (Java OOP) -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="backend">
+          <div>
+            <div class="h-48 bg-space-900 border-b border-white/10 p-4 font-mono-code text-xs text-slate-300 flex flex-col justify-center">
+              <div class="text-purple-400">// Java OOP Architecture</div>
+              <div class="text-slate-400">public class InventarioManager {</div>
+              <div class="pl-4 text-emerald-400">private List&lt;Item&gt; itens;</div>
+              <div class="pl-4 text-blue-400">public void adicionarItem(Item i) { ... }</div>
+              <div class="text-slate-400">}</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-red-500/20 text-red-300 border border-red-500/30">Java</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">POO & Design Patterns</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Inventário RPG</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Sistema modular em Java com aplicação dos conceitos fundamentais de Orientação a Objetos (Encapsulamento, Polimorfismo e Herança) para gerenciar inventários e atributos de RPG.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">POO</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Estruturas de Dados</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Java Collections</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Back-end & POO</span>
+            <a href="https://github.com/Deboshionkio/inventario_rpg" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              Repositório ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 7: Physicos Jurerê -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="react">
+          <div>
+            <div class="project-img-wrapper h-48 bg-slate-900 border-b border-white/10">
+              <img src="assets/physicos.png" alt="Physicos Jurerê" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Institucional</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">Jurerê / Floripa</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Physicos Jurerê</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Website institucional completo e responsivo para centro de saúde e treinamento físico em Jurerê (Florianópolis), destacando modalidades, equipe e localização.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">HTML5</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">CSS3 Moderno</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Responsive UX</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <a href="https://physicos.vercel.app" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              Live Demo
+            </a>
+            <a href="https://github.com/Deboshionkio/physicos" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 8: Python & Data Challenges -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="backend">
+          <div>
+            <div class="h-48 bg-space-900 border-b border-white/10 p-4 font-mono-code text-xs text-slate-300 flex flex-col justify-center">
+              <div class="text-yellow-400"># Python Data Science & Math</div>
+              <div class="text-slate-400">def calcular_melhor_acuracia(y_true, y_pred):</div>
+              <div class="pl-4 text-cyan-300">accuracy = sum(y_t == y_p for y_t, y_p in zip(y_true, y_pred)) / len(y_true)</div>
+              <div class="pl-4 text-emerald-400">return round(accuracy, 4)</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">Python 3</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Jupyter Notebook</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Data & Algoritmos</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Série de algoritmos para resolução de desafios matemáticos, cálculo de acurácia estatística, estimativa de consumo de combustível e processamento de dados.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Python</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Matemática</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-white/5 text-slate-400">Algoritmos</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Desafios & Estatística</span>
+            <a href="https://github.com/Deboshionkio/1-3---Encontrando-a-Melhor-Acur-cia" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              Repositório ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECH STACK & SKILLS MATRIX -->
+    <section id="habilidades" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide uppercase">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          Competências & Tecnologias
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Stack Técnica & Ecossistema
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Do hardware fundamental ao front-end moderno, passando por back-end robusto e orquestração em nuvem.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Front-end Moderno -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5">
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Front-end & UI</h3>
+            <p class="text-xs text-slate-400 mb-4">Construção de interfaces interativas, responsivas e de alta conversão.</p>
+            <ul class="space-y-2 text-xs font-mono-code text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>React 19 & 18</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>TypeScript & JS (ES6+)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Tailwind CSS (v3 e v4)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Radix UI & TanStack Start</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>HTML5 Semântico & Canvas</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Back-end & Dados -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Back-end & Dados</h3>
+            <p class="text-xs text-slate-400 mb-4">Lógica estruturada, POO, banco de dados e APIs RESTful.</p>
+            <ul class="space-y-2 text-xs font-mono-code text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Python 3 (APIs & Scripts)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Java (POO & Padrões)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Supabase & PostgreSQL</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>RESTful APIs & Webhooks</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Jupyter Notebook & Análises</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3: Cloud & DevOps -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-5">
+              <i data-lucide="cloud" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cloud & DevOps</h3>
+            <p class="text-xs text-slate-400 mb-4">Versionamento, conteinerização, automação e deploy contínuo.</p>
+            <ul class="space-y-2 text-xs font-mono-code text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Git & GitHub Avançado</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Docker & Microsserviços</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Kubernetes & Jenkins (CI/CD)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Google Cloud & Qwiklabs</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Google Analytics 4 (GA4)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 4: Hardware & Eletrônica -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5">
+              <i data-lucide="wrench" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Hardware & Suporte</h3>
+            <p class="text-xs text-slate-400 mb-4">Base sólida da engenharia física e infraestrutura computacional.</p>
+            <ul class="space-y-2 text-xs font-mono-code text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Especialista Eletrônica (FAB)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Manutenção de Hardware</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Instrutor de TI (Nível B1)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Diagnóstico de Redes</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Sistemas Operacionais Linux/Win</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRAJETÓRIA & SOBRE MIM -->
+    <section id="trajetoria" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wide uppercase">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          Uma Jornada Multidisciplinar
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Sobre Mim & Trajetória
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          A combinação de disciplina militar, rigor eletrônico, engenharia de software e criatividade artística.
+        </p>
+      </div>
+
+      <div class="relative pl-6 md:pl-0 space-y-8">
+        <!-- Timeline Center Line -->
+        <div class="timeline-line hidden md:block"></div>
+
+        <!-- Timeline Item 1: UNIVALI ADS -->
+        <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="md:text-right space-y-2">
+            <span class="inline-block px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono-code font-bold">2022 — Presente</span>
+            <h3 class="text-xl font-bold text-white">Análise e Desenvolvimento de Sistemas (ADS)</h3>
+            <p class="text-slate-400 text-sm">Universidade do Vale do Itajaí (UNIVALI)</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Formação superior com foco em engenharia de software, modelagem de sistemas, orientação a objetos, arquitetura web, cloud computing e governança de tecnologia.
+            </p>
+          </div>
+          <div class="hidden md:flex justify-start pl-6">
+            <div class="w-10 h-10 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-300">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Força Aérea Brasileira -->
+        <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="hidden md:flex justify-end pr-6 order-1">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border-2 border-blue-400 flex items-center justify-center text-blue-300">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="space-y-2 order-2">
+            <span class="inline-block px-2.5 py-1 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono-code font-bold">Força Aérea Brasileira</span>
+            <h3 class="text-xl font-bold text-white">Especialista em Eletrônica (Turma 1998)</h3>
+            <p class="text-slate-400 text-sm">Aeronáutica Brasileira</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Formação de alta precisão técnica em circuitos eletrônicos, análise de sinais, telecomunicações e disciplina operacional. Essa vivência moldou meu pensamento analítico para resolver bugs complexos na raiz.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Técnico e Instrutor -->
+        <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="md:text-right space-y-2">
+            <span class="inline-block px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-mono-code font-bold">Experiência Prática</span>
+            <h3 class="text-xl font-bold text-white">Técnico em Computadores & Instrutor B1</h3>
+            <p class="text-slate-400 text-sm">Suporte & Capacitação Técnica</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Anos de prática em montagem, manutenção corretiva, instalação de sistemas e instrução de computação. Compreensão total da máquina — do hardware físico ao software de alto nível.
+            </p>
+          </div>
+          <div class="hidden md:flex justify-start pl-6">
+            <div class="w-10 h-10 rounded-full bg-purple-500/20 border-2 border-purple-400 flex items-center justify-center text-purple-300">
+              <i data-lucide="laptop" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4: Música e Arte -->
+        <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="hidden md:flex justify-end pr-6 order-1">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-emerald-300">
+              <i data-lucide="music" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="space-y-2 order-2">
+            <span class="inline-block px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono-code font-bold">Lado Artístico & Criativo</span>
+            <h3 class="text-xl font-bold text-white">Músico (Saxofonista) & Artista Plástico</h3>
+            <p class="text-slate-400 text-sm">Tons e Dons Floripa & Feira de Artes de São José</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Formação musical na Tons e Dons em Florianópolis e produção de arte em telas com exposições públicas. A música e a pintura trazem harmonia, ritmo e sensibilidade visual aplicados diretamente na criação de interfaces elegantes e intuitivas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICAÇÕES & FORMAÇÕES -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="glass-card rounded-2xl p-8 border border-white/10">
+        <div class="flex items-center gap-3 mb-6">
+          <i data-lucide="award" class="w-6 h-6 text-yellow-400"></i>
+          <h3 class="text-2xl font-bold text-white">Cursos & Certificações Relevantes</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">UNIVALI</div>
+            <div class="text-sm font-semibold text-white">Análise e Desenvolvimento de Sistemas</div>
+            <div class="text-xs text-slate-400 mt-1">Graduação Superior em Andamento</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">Digital Innovation One (DIO)</div>
+            <div class="text-sm font-semibold text-white">Formação Back-end Python & AI Agents</div>
+            <div class="text-xs text-slate-400 mt-1">POO, APIs REST, Chatbots e Automação</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">Google Cloud / Qwiklabs</div>
+            <div class="text-sm font-semibold text-white">Computação em Nuvem & Infraestrutura</div>
+            <div class="text-xs text-slate-400 mt-1">Google Cloud Platform & Storage</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">DevOps & Microsserviços</div>
+            <div class="text-sm font-semibold text-white">Docker, Kubernetes & Jenkins CI/CD</div>
+            <div class="text-xs text-slate-400 mt-1">Pipelines de Integração e Entrega Contínua</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">Força Aérea Brasileira</div>
+            <div class="text-sm font-semibold text-white">Especialista em Eletrônica</div>
+            <div class="text-xs text-slate-400 mt-1">Turma 1998 — Disciplina & Circuitos</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <div class="text-cyan-400 text-xs font-mono-code mb-1">Música & Criatividade</div>
+            <div class="text-sm font-semibold text-white">Escola de Música Tons e Dons</div>
+            <div class="text-xs text-slate-400 mt-1">Formação Instrumental em Saxofone</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CALL TO ACTION -->
+    <section id="contato" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 relative overflow-hidden text-center">
+        
+        <div class="ambient-glow glow-cyan -top-20 -right-20"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot"></span>
+            Pronto para Novas Oportunidades
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Vamos construir algo incrível juntos?
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Seja para o desenvolvimento de uma nova aplicação web, otimização de conversão, consultoria técnica ou projetos full stack. Ficarei feliz em trocar uma ideia.
+          </p>
+
+          <!-- Contact Channels Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
+            
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/5548988504214?text=Ol%C3%A1%20Jo%C3%A3o,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-between group transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-bold">
+                  <i data-lucide="message-square" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-medium">WhatsApp Direto</div>
+                  <div class="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">(48) 98850-4214</div>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <!-- Copy Email Card -->
+            <div id="copy-email-btn" class="p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between cursor-pointer group transition-all relative">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400 font-medium">E-mail Acadêmico & Profissional</div>
+                  <div class="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">jcvcaiovieira@edu.univali.br</div>
+                </div>
+              </div>
+              <i data-lucide="copy" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+              
+              <!-- Toast Feedback -->
+              <div id="copy-toast" class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs opacity-0 pointer-events-none transition-opacity duration-300 shadow-lg">
+                E-mail copiado! ✅
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Socials Row -->
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+            <a href="https://www.linkedin.com/in/joao-vieira-656358176/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-slate-300 hover:text-white text-xs font-semibold transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Deboshionkio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold transition-all">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              GitHub (Deboshionkio)
+            </a>
+            <a href="https://www.instagram.com/eusoujoaovieira/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-pink-600/20 border border-white/10 hover:border-pink-500/40 text-slate-300 hover:text-white text-xs font-semibold transition-all">
+              <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+              @eusoujoaovieira
+            </a>
+          </div>
+
+          <!-- Location & Live Time -->
+          <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-red-400"></i>
+              <span>Grande Florianópolis / São José, SC — Brasil</span>
+            </div>
+            <div class="flex items-center gap-2 font-mono-code">
+              <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
+              <span>Horário Local: <span id="live-clock" class="text-white font-bold">--:--:--</span></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10 px-4 sm:px-6 lg:px-8 bg-[#05070c]">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs">JV</span>
+        <span>© 2026 João Carlos Vieira. Todos os direitos reservados.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Construído com Antigravity</span>
+        <span>•</span>
+        <a href="#inicio" class="text-slate-400 hover:text-white transition-colors">Voltar ao Topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
