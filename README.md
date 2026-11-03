@@ -39,37 +39,25 @@ Como o projeto é construído em padrões web puros e modernos, basta abrir o ar
 
 ```bash
 # Clone ou acesse a pasta do projeto:
-cd "portfolio-joao-carlos-vieira"
+cd "joaocarlosvieira-dev"
 
-# Opção 1: Abra diretamente com o navegador padrão no Windows
+# Abra diretamente no navegador padrão:
 start index.html
-
-# Opção 2: Ou execute com um servidor local rápido (Python ou npx serve):
-python -m http.server 3000
-# Acesse http://localhost:3000
 ```
 
 ---
 
-## 🌐 Deploy Rápido na Vercel ou GitHub Pages
+## 🌐 Publicação no GitHub Pages ou Vercel
 
-### Deploy na Vercel:
-1. Instale o Vercel CLI (se ainda não tiver): `npm i -g vercel`
-2. Na pasta do portfólio, execute: `vercel`
-3. Siga as instruções no terminal para publicar instantaneamente.
+### GitHub Pages:
+O repositório já está configurado em:
+👉 [https://github.com/Deboshionkio/joaocarlosvieira-dev](https://github.com/Deboshionkio/joaocarlosvieira-dev)
 
-### Deploy no GitHub Pages:
-1. Crie um repositório no seu GitHub (`Deboshionkio/portfolio`).
-2. Faça commit e push dos arquivos:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: portfolio joao carlos vieira release v1.0"
-   git branch -M main
-   git remote add origin https://github.com/Deboshionkio/portfolio.git
-   git push -u origin main
-   ```
-3. No GitHub, acesse **Settings > Pages** e selecione a branch `main` e pasta `/root`.
+Para ativar o Pages:
+1. No repositório, acesse **Settings > Pages**
+2. Em **Build and deployment > Branch**, selecione **`main`** e pasta **`/(root)`**
+3. Clique em **Save**.
+4. URL pública: `https://deboshionkio.github.io/joaocarlosvieira-dev/`
 
 ---
 
