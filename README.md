@@ -18,7 +18,7 @@ Portfólio moderno, responsivo e de alta performance desenvolvido para apresenta
   - **Physicos Jurerê:** Website institucional responsivo para estúdio de saúde e treino em Jurerê.
   - **Data Science & Algoritmos:** Coleção de notebooks Python para desafios matemáticos, cálculo de acurácia e consumo.
 - **Stack Técnica Categorizada:** Front-end, Back-end & Dados, Cloud & DevOps, e Hardware & Eletrônica.
-- **Trajetória Autêntica:** A história única de João Carlos Vieira unindo a formação de **Especialista em Eletrônica pela Força Aérea Brasileira (Aeronáutica - 1998)**, anos de experiência técnica em suporte/hardware, estudos em ADS na UNIVALI e sua sensibilidade criativa como **músico (saxofonista) e artista plástico**.
+- **Trajetória Autêntica:** A evolução profissional de João Carlos Vieira integrando sua formação em **Análise e Desenvolvimento de Sistemas (UNIVALI)**, constante capacitação em back-end e IA na **DIO**, mais de duas décadas de prática em computação e hardware (com qualificação pela **Study Data Florianópolis** desde 2003), valores de disciplina como militar da reserva (concursado federal - especialização BET em eletrônica básica) e sensibilidade criativa como **músico e artista plástico**.
 - **Canais de Contato com 1 Clique:** Integração direta com WhatsApp, botão de cópia de e-mail com toast animado, LinkedIn, GitHub e relógio com horário local de Florianópolis (GMT-3) em tempo real.
 
 ---
